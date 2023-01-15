@@ -16,5 +16,3 @@ variable "egress_rules" {
 }
 variable "rules" {
 }
-variable "IGW_name" {
-}

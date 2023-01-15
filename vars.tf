@@ -5,9 +5,6 @@ variable "AWS_REGION" {
 variable "subnet_count" {
   type = any
 }
-variable "tags" {
-  type = map(any)
-}
 #---------- NETWORK
 variable "subnets" {
   type = any
@@ -40,14 +37,22 @@ variable "cluster_config" {
 variable "node_group_config" {
   type = any
 }
-variable "node_group_config" {
+variable "DB_Username" {
   type = any
 }
-variable "node_group_config" {
+variable "DB_Password" {
   type = any
 }
-#---------- HELM
+#---------- Apps
 variable "dns_config" {
   type = any
 }
-
+variable "argo_address" {
+  type = any
+}
+variable "argocd_user" {
+  type = any
+}
+variable "argocd_pass" {
+  type = any
+}

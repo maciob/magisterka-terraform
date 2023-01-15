@@ -2,10 +2,16 @@ provider "aws" {
     region = "${var.AWS_REGION}"
 }
 terraform{
-    backend "s3"{
-        bucket = "terraform-state"
+    backend "s3" {
+        bucket = "terraform-magisterka"
         key = "state"
-        region = "eu-west-2"
+        region = "eu-west-1"
+    }
+    required_providers {
+        argocd = {
+            source = "oboukili/argocd"
+            version = "1.1.3"
+        }
     }
 }
 provider "helm" {

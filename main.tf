@@ -11,7 +11,6 @@ module "Network" {
     ingress_rules         = var.ingress_rules
     egress_rules          = var.egress_rules
     rules                 = var.rules
-    tags                  = var.tags
 }
 
 module "Compute" {
@@ -25,7 +24,6 @@ module "Compute" {
     VPC_GROUP_ID          = module.Network.VPC_GROUP_ID
     #==================== VARS
     subnet_count          = var.subnet_count
-    tags                  = var.tags
     cluster_config        = var.cluster_config
     node_group_config     = var.node_group_config
     DB_Username           = var.DB_Username
@@ -34,8 +32,10 @@ module "Compute" {
 
 module "Apps" {
     #==================== SOURCE
-    source                = "./Apps/Helm"
+    source                = "./Modules/Apps"
     #==================== VARS
     dns_config            = var.dns_config
     argo_address          = var.argo_address
+    argocd_user           = var.argocd_user
+    argocd_pass           = var.argocd_pass
 }
