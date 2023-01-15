@@ -28,6 +28,8 @@ module "Compute" {
     tags                  = var.tags
     cluster_config        = var.cluster_config
     node_group_config     = var.node_group_config
+    DB_Username           = var.DB_Username
+    DB_Password           = var.DB_Password
 }
 
 module "Apps" {

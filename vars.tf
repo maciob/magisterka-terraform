@@ -40,6 +40,12 @@ variable "cluster_config" {
 variable "node_group_config" {
   type = any
 }
+variable "node_group_config" {
+  type = any
+}
+variable "node_group_config" {
+  type = any
+}
 #---------- HELM
 variable "dns_config" {
   type = any

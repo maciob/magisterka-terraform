@@ -40,7 +40,7 @@ resource "helm_release" "external_dns" {
         value = var.dns_config["name"]
     }
     set {
-        name = var.dns_config["value"]
+        name = rbac.serviceAccountAnnotations.eks\\.amazonaws\\.com/role-arn
         value = var.dns_config["arn"]
     }
     set {

@@ -3,7 +3,7 @@ provider "aws" {
 }
 terraform{
     backend "s3"{
-        bucket = "mbekas-portfolio-bucket"
+        bucket = "terraform-state"
         key = "state"
         region = "eu-west-2"
     }

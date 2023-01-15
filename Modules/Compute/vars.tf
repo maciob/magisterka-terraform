@@ -12,3 +12,7 @@ variable "node_group_config" {
 }
 variable "cluster_config" {
 }
+variable "DB_Username" {
+}
+variable "DB_Password" {
+}
