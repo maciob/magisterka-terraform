@@ -4,6 +4,11 @@ resource "helm_release" "cert-manager" {
     chart = "cert-manager"
     wait = true
     version = "1.11.0"
-    namespace = "App"
+    namespace = "default"
     create_namespace = "true"
+
+    set {
+        name = "installCRDs"
+        value = "true"
+    }
 }

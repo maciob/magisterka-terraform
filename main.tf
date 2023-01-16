@@ -33,6 +33,9 @@ module "Compute" {
 module "Apps" {
     #==================== SOURCE
     source                = "./Modules/Apps"
+    #==================== DEPENDS ON Compute
+    depends_on            = [module.Compute]
+
     #==================== VARS
     dns_config            = var.dns_config
     argo_address          = var.argo_address

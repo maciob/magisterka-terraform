@@ -7,16 +7,10 @@ terraform{
         key = "state"
         region = "eu-west-1"
     }
-    required_providers {
-        argocd = {
-            source = "oboukili/argocd"
-            version = "1.1.3"
-        }
-    }
 }
 provider "helm" {
     kubernetes {
-        host = "${module.Compute.CLUSTER_ENDPOINT}"
+        host = module.Compute.CLUSTER_ENDPOINT
         cluster_ca_certificate = base64decode(module.Compute.CLUSTER_CERTIFICATE_AUTHORITY.0.data)
         exec {
             api_version = "client.authentication.k8s.io/v1beta1"
@@ -24,4 +18,17 @@ provider "helm" {
             command     = "aws"
         }
     }
+}
+provider "kubernetes" {
+    host = module.Compute.CLUSTER_ENDPOINT
+    cluster_ca_certificate = base64decode(module.Compute.CLUSTER_CERTIFICATE_AUTHORITY.0.data)
+    exec {
+        api_version = "client.authentication.k8s.io/v1beta1"
+        args        = ["eks", "get-token", "--cluster-name", var.cluster_config["name"]]
+        command     = "aws"
+    }
+    # experiments {
+    #     manifest_resource = true
+    # }
+
 }
