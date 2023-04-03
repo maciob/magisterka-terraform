@@ -1,7 +1,6 @@
 resource "helm_release" "external_dns" {
     name = "external-dns"
-    repository = "https://charts.bitnami.com/bitnami"
-    chart = "external-dns"
+    chart = "./magisterka-helm/infra-apps/external-dns"
     wait = true
     version = "6.12.0"
     namespace = "default"

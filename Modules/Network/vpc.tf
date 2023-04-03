@@ -16,5 +16,6 @@ resource "aws_subnet" "AWS_SUBNETS" {
   map_public_ip_on_launch = var.subnets[count.index]["public_ip"]
   tags = {
     Name                  = "magisterka-subnet-${count.index}"
+    "kubernetes.io/role/elb" = 1
   }
 }

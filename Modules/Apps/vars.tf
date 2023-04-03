@@ -1,8 +1,16 @@
 variable "dns_config" {
 }
-variable "argo_address" {
+variable "front_url" {
 }
-variable "argocd_user" {
+variable "db_username" {
 }
-variable "argocd_pass" {
+variable "db_password" {
+}
+variable "email_username" {
+}
+variable "email_password" {
+}
+variable "db_address" {
+}
+variable "cert_arn" {
 }

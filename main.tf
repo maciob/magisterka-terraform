@@ -35,10 +35,14 @@ module "Apps" {
     source                = "./Modules/Apps"
     #==================== DEPENDS ON Compute
     depends_on            = [module.Compute]
-
+    
+    db_address            = module.Compute.DATABASE_ENDPOINT
     #==================== VARS
     dns_config            = var.dns_config
-    argo_address          = var.argo_address
-    argocd_user           = var.argocd_user
-    argocd_pass           = var.argocd_pass
+    front_url             = var.front_url
+    db_username           = var.DB_Username
+    db_password           = var.DB_Password
+    email_username        = var.email_username
+    email_password        = var.email_password
+    cert_arn              = var.cert_arn
 }

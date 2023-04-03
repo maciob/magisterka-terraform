@@ -47,12 +47,15 @@ variable "DB_Password" {
 variable "dns_config" {
   type = any
 }
-variable "argo_address" {
+variable "front_url" {
   type = any
 }
-variable "argocd_user" {
+variable "email_username" {
   type = any
 }
-variable "argocd_pass" {
+variable "email_password" {
+  type = any
+}
+variable "cert_arn" {
   type = any
 }
