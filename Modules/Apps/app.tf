@@ -35,4 +35,12 @@ resource "helm_release" "magisterka" {
         name  = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/certificate-arn"
         value = "${var.cert_arn}"
     }
+    set {
+        name = "global.fido_secret"
+        value = "${var.fido_secret}"
+    }
+    set {
+        name = "global.mode"
+        value = "${var.mode}"
+    }
 }

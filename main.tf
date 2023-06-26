@@ -45,4 +45,6 @@ module "Apps" {
     email_username        = var.email_username
     email_password        = var.email_password
     cert_arn              = var.cert_arn
+    fido_secret           = var.fido_secret
+    mode                  = var.mode
 }

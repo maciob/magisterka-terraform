@@ -14,3 +14,8 @@ variable "db_address" {
 }
 variable "cert_arn" {
 }
+variable "fido_secret" {
+}
+variable "mode" {
+    type = string
+}

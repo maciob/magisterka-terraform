@@ -59,3 +59,9 @@ variable "email_password" {
 variable "cert_arn" {
   type = any
 }
+variable "fido_secret" {
+  type = any
+}
+variable "mode" {
+  type = string
+}
